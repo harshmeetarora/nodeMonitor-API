@@ -14,6 +14,9 @@ router.route('/getData')
             // Request methods you wish to allow
             res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
             res.send(content);
+        },
+        function(err){
+            res.send("failure: " + err);
         }
         );
         });
