@@ -8,7 +8,9 @@ var dbName = "a5db";
 router.route('/getData')
      .get((req,res) => {
         const collection = req.app.locals.collection;
-        var responsePromise = collection.find({}).toArray()
+        var responsePromise = collection.find()
+                                .sort({$natural: -1})
+                                .limit(1).toArray();
         responsePromise.then(function(content){
             res.setHeader('Access-Control-Allow-Origin', '*');
             // Request methods you wish to allow
