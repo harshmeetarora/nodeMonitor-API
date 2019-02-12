@@ -20,8 +20,3 @@ MongoClient.connect(mongo_uri, { useNewUrlParser: true })
   app.locals.collection = collection;
   app.listen(port, () => console.info(`REST API running on port ${port}`));
 }).catch(error => console.error(error));
-
-
-
-
-// app.listen(port, () => console.log("SERVER STARTED..."));
